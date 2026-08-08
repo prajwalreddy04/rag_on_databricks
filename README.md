@@ -23,3 +23,16 @@ Standard Large Language Models (LLMs) cannot access private enterprise documents
 
 ## 🏗️ System Architecture
 
+[ PDF / Enterprise Documents ]
+│
+▼
+Notebook 01: Ingestion & Parsing (PyPDF + LangChain Splitter)
+│
+▼
+[ Unity Catalog Delta Table ] ── (Delta Sync) ──► [ Mosaic AI Vector Search Endpoint ]
+│
+[ User Query ] ──────► Notebook 03: RAG Chain ─────────────────┤
+(LangChain / Databricks SDK)        │ Top-K Chunks
+│                            ▼
+└───► [ Databricks Foundation LLM ] ──► [ Grounded Answer ]
+
